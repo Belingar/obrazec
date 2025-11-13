@@ -1,8 +1,50 @@
 
 function submitButton(title, text, icon, toast) {
+    const inputs = document.querySelectorAll("input, select, textarea");
+    let valid = true;
+    const formData = {};
+    inputs.forEach((el) => {
+        const label = el.closest('.form-group')?.querySelector('.form-label')?.innerText || el.name || el.id || 'Polje';
+        const value = el.value.trim();
+        formData[label] = value;
+        if (label.includes('*') && value === "") {
+            valid = false;
+            el.style.border = "2px solid red"; // highlight empty
+        } else {
+            el.style.border = ""; // reset
+        }
+        if (!valid) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Manjkajo podatki!',
+            text: 'Prosimo, izpolnite vsa obvezna polja (označena z *).',
+            confirmButtonColor: '#d33'
+        });
+        return;
+    }
+    let summaryHTML = '<ul style="text-align:left;">';
+    for (const [key, value] of Object.entries(formData)) {
+        summaryHTML += `<li><strong>${key}:</strong> ${value || '-'}</li>`;
+    }
+    summaryHTML += '</ul>';
+
+    Swal.fire({
+        title: 'Pregled podatkov',
+        html: summaryHTML,
+        icon: 'success',
+        confirmButtonText: 'Potrdi in nadaljuj',
+        confirmButtonColor: '#3085d6'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // You can send data to server or next step here
+            console.log("Zbrani podatki:", formData);
+            Swal.fire('Oddano!', 'Podatki so bili uspešno poslani.', 'success');
+        }
+    });
+    });
+};
     Swal.fire({
         title: "Dobro!",
         text: "Placilo je bilo uspešno!",
         icon: "success"
     })
-};
