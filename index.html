@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <link rel='ICON' href="Slike/bankanet.ico" type="image/icon-x">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="javascript/script"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css">
     <title>Bank@net</title>
 </head>
 
@@ -153,18 +157,20 @@
                     <div class="form-group">
                         <label class="form-label">Racun *</label>
                         <select class="form-select">
-                            <option>0SEBNI RACUNI (EUR)</option>
+                            <option name="osebni racun">0SEBNI RACUNI (EUR)</option>
+                            <option name="racun tujina">RACUN V TUJINI (FRA)</option>
+                            <option name="poslovni racun">POSLOVNI RACUN (EUR)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Naziv *</label>
-                        <input type="text" class="form-input" value="TAJHMAN ALJAZ">
+                        <input type="text" class="form-input" value="" maxlength="30" placeholder="Tvoje Ime in Priimek">
                     </div>
                     <div class="form-group">
                         <label class="form-label">IBAN *</label>
                         <div class="iban-input">
                             <input type="text" class="form-input short" value="SI56" disabled>
-                            <input type="text" class="form-input flex" value="0400 1001 2534 329">
+                            <input type="number" class="form-input flex" value="" minlength="15" maxlength="15" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}" placeholder="1232-4567-8901-234">
                         </div>
                     </div>
                     <div class="balance-grid">
@@ -195,26 +201,35 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Naziv *</label>
-                        <input type="text" class="form-input" value="GEN-I, TRGOVANJE IN PRODAJA ELEKTRICNE ENERGIJE, D.0.">
+                        <select class="form-select">
+                            <option name="gen-i slovenija">GEN-i SLOVENIJA</option>
+                            <option name="davki slovenija">DAVKI SLOVENIJA</option>
+                            <option name="racun zunaj">RACUN V TUJINI</option>
+                        </select>
                     </div>
                     <div class="form-group"> 
                         <label class="form-label">IBAN *</label>
                         <div class="iban-input"> 
                             <input type="text" class="form-input short" value="SI56" disabled>
-                            <input type="text" class="form-input flex" value="0292 1009 0087 339">
+                            <input type="number" class="form-input flex" value="" minlength="15" maxlength="15" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}" placeholder="1232-4567-8901-234">
                             <span class="check-icon"></span>
                         </div>
                         <p class="form-hint success">Velikem IBAN</p>
                     </div>
                     <div class="form-group"> 
                         <label class="form-label">Naslov *</label> 
-                        <input type="text" class="form-input" value="VRBINA 017"> </div>
+                        <input type="text" class="form-input" value="" maxlength="30" placeholder="Ime Ulice"> </div>
                     <div class="form-group"> 
                         <label class="form-label">Posta *</label> 
-                        <input type="text" class="form-input" ” value="KRSK0"> </div>
+                        <input type="text" class="form-input" ” value="" maxlength="30" placeholder="Ime Kraja"> </div>
                     <div class="form-group"> 
-                        <label class="form-label">Drzava *</label> 
-                        <input type="text" class="form-input" value="SLOVENIJA"> </div>
+            
+                        <select class="form-select">
+                            <option name="slovenija">SLOVENIJA</option>
+                            <option name="italija">ITALIJA</option>
+                            <option name="francija">FRANCIJA</option>
+                        </select> 
+                    </div>
                     <div class="button-row"> 
                         <button class="form-button"> 
                             <span class="button-icon">📁</span>  PODVOJI
@@ -227,33 +242,54 @@
                         <div class="step-number">3</div>
                         <h3 class="card-title">Podrobnosti placila</h3> <span class="info-icon"></span>
                     </div>
-                    <div class="form-group"> <label class="form-label">Znesek *</label>
-                        <div class="amount-input"> <input type="text" class="form-input amount" value="120.00"> <input
-                                type="text" class="form-input currency" value="EUR" disabled> </div>
+                    <div class="form-group"> 
+                        <label class="form-label">Znesek *</label>
+                            <div class="amount-input"> <input type="text" class="form-input amount" placeholder="120.00" step="0.01" min="0"> 
+                                <input type="text" class="form-input currency" value="EUR" disabled> 
+                            </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group"> <label class="form-label">Model *</label> <select class="form-select">
-                                <option>SI</option>
+                        <div class="form-group"> <label class="form-label">Model *</label> 
+                            <select class="form-select">
+                                <option name="si">SI</option>
+                                <option name="ita">ITA</option>
+                                <option name="fra">FRA</option>
                             </select> </div>
-                        <div class="form-group"> <label class="form-label">Referenca *</label>
-                            <div class="reference-input"> <input type="text" class="form-input" value="00 654987"> <span
-                                    class="info-icon small"></span> </div>
+                        <div class="form-group"> 
+                            <label class="form-label">Referenca *</label>
+                            <div class="reference-input"> <input type="text" class="form-input" placeholder="00 654987" maxlength="8"> 
+                                <span class="info-icon small"></span> 
+                            </div>
                         </div>
                     </div>
                     <p class="form-hint">Za pomoc pri izpolnjevanju reference, kliknite na info ikono</p>
-                    <div class="form-group"> <label class="form-label">Koda namena *</label> <select
-                            class="form-select">
-                            <option>GDSV - PLACILO BLAGA IN STORITEV</option>
-                        </select> </div>
-                    <div class="form-group"> <label class="form-label">Namen *</label> <input type="text"
-                            class="form-input" value="PLACILO"> </div>
-                    <div class="form-group"> <label class="form-label">Datum placila *</label>
-                        <div class="date-input"> <input type="text" class="form-input" value="27.08.2024">  </div>
+                    <div class="form-group"> 
+                        <label class="form-label">Koda namena *</label> 
+                        <select class="form-select">
+                            <option name="GDSV">GDSV - PLACILO BLAGA IN STORITEV</option>
+                            <option name="GEN-I">GENI - PLACILO BLAGA IN STORITEV</option>
+                        </select> 
                     </div>
-                    <div class="form-inline"> <label class="form-label">Nadomestilo</label> <input type="text"
+                    <div class="form-group"> <label class="form-label">Namen *</label> 
+                        <select class="form-select">
+                            <option name="PLACILO">PLACILO</option>
+                            <option name="DAJATEV">DAJATEV</option>
+                            <option name="davki">DAVKI</option>
+                        </select> 
+                    </div>
+                    <div class="form-group"> 
+                        <label class="form-label">Datum placila *</label>
+                        <div class="date-input"> 
+                            <input type="text" class="form-input" value="27.08.2024">  
+                        </div>
+                    </div>
+                    <div class="form-inline"> <label class="form-label">Nadomestilo</label> 
+                        <input type="text"
                             class="form-input small" value="/">
-                        <div class="checkbox-group"> <input type="checkbox" id="urgent"> <label for="urgent">Nujno
-                                placilo</label> </div>
+                        <div class="checkbox-group"> 
+                            <input type="checkbox" id="urgent"> 
+                            <label for="urgent">Nujno placilo</label> 
+                        </div>
                     </div>
                 </div>
                 
@@ -271,13 +307,19 @@
                         <div class="recurring-field">
                             <label>Pogostost:</label>
                             <select class="form-select small">
-                                <option>Mesečno</option>
+                                <option name="mesecno">Mesečno</option>
+                                <option name="dnevno">Dnevno</option>
+                                <option name="tedensko">Tedensko</option>
+                                <option name="leno">Letno</option>
                             </select>
                         </div>
                         <div class="recurring-field">
                             <label>Število plačil:</label>
                             <select class="form-select small">
-                                <option>2</option>
+                                <option name="1">1</option>
+                                <option name="2">2</option>
+                                <option name="3">3</option>
+                                <option name="4">4</option>
                             </select>
                         </div>
                         <div class="recurring-field">
@@ -295,7 +337,7 @@
                 </div>
                 <div class="bottom-actions">
                     <button class="submit-button secondary">SHRANI KOT VZOREC</button>
-                    <button class="submit-button primary">NAPREJ</button>
+                    <button type="submit" onclick="submitButton()" class="submit-button primary">NAPREJ</button>
                 </div>
             </div>
             </div>

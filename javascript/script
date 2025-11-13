@@ -1,0 +1,8 @@
+
+function submitButton(title, text, icon, toast) {
+    Swal.fire({
+        title: "Dobro!",
+        text: "Placilo je bilo uspešno!",
+        icon: "success"
+    })
+};
