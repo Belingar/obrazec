@@ -714,23 +714,6 @@ select {
     flex-shrink: 0;
 }
 
-.nav-picture16 {
-    background-image: url(../Slike/qr1.svg);
-    width: 1rem;
-    height: 1rem;
-    background-size: cover;
-    flex-shrink: 0;
-}
-
-.napaka {
-    border: 2px solid red;
-}
-
-.napaka::placeholder {
-    color: red;
-    opacity: 1;
-}
-
 @media (max-width: 1024px) {
 
     .payment-form,

@@ -126,7 +126,17 @@ button {
     display: flex;
     height: 46rem;
     width: 63rem;
+    max-width: 100%;
     position: relative;
+}
+
+@media (max-width: 1024px) {
+    .form-display {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 2rem;
+    }
 }
 
 .form-display-left {
@@ -136,6 +146,16 @@ button {
     border-radius: 25px;
     position: relative;
     top: 28%
+}
+
+@media (max-width: 1280px) {
+    .form-display-left {
+        width: 100%;
+        top: 0;
+        order: 1;
+        height: auto;
+        min-height: 46rem;
+    }
 }
 
 .picure-banka {
@@ -166,19 +186,20 @@ button {
 .display-left-bottom {
     background-color: white;
     height: 20%;
+    min-height: 8rem;
     width: 90%;
     border-radius: 25px;
     margin: auto;
     margin-top: 3%;
-    box-shadow: wheat;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    overflow: hidden;
+    position: relative;
 }
 
 .top-window {
     padding-top: 5%;
     padding-left: 5%;
     width: 90%;
-    height: 10%;
 }
 
 .button-window {
@@ -216,6 +237,14 @@ h2 {
     gap: 0.5rem;
     margin-top: 5%;
     margin-left: 2%;
+}
+
+@media (max-width: 600px) {
+    .top-button {
+        flex-direction: column;
+        width: 90%;
+        height: 6rem;
+    }
 }
 
 .slideshow {
@@ -403,19 +432,26 @@ span {
 
 .bottom-text-app {
     width: 90%;
-    margin: auto;
+    height: 100%;
     display: flex;
-
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
 }
 
 .bottom-app {
-    margin-top: 5%;
-    position: absolute;
-    width: 80%;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bottom-inline{
+    display: inline-block;
 }
 
 .bottom-link-app {
-    margin-top: 5%;
+    display: flex;
+    gap: 1rem;
 }
 
 .bottom-link {
@@ -435,19 +471,29 @@ span {
 }
 
 .qr {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 .qr-code {
+    flex-shrink: 0;
+    display: flex;
     float: right;
-    margin: auto;
-
+    align-items: center;
+    justify-content: center;
 }
 
 .promotion {
     margin: auto;
     margin-top: 30%;
+}
+
+@media (max-width: 1280px) {
+    .promotion {
+        margin-top: 0;
+        order: 2;
+        width: 100%;
+    }
 }
 
 .logo-image {
@@ -458,3 +504,10 @@ span {
     background-size: 60% 60%;
 }
 
+.nav-picture1 {
+    background-image: url(../Slike/sms-žeton.svg);
+    width: 1rem;
+    height: 1rem;
+    background-size: cover;
+    flex-shrink: 0;
+}
