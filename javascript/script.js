@@ -57,7 +57,7 @@ function submitButton() {
         html: summaryHTML,
         icon: 'success',
         confirmButtonText: 'Potrdi in nadaljuj',
-        confirmButtonColor: '#3085d6'
+        confirmButtonColor: '#57A939'
     }).then((result) => {
         if (result.isConfirmed) {
             console.log("Zbrani podatki:", formData);
@@ -65,4 +65,5 @@ function submitButton() {
         }
     });
 }
+
 
