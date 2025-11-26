@@ -9,19 +9,16 @@ function submitButton() {
         const value = el.value.trim();
         formData[label] = value;
 
-        // Reset previous error styles
         el.style.border = "";
 
-        // Basic required-field check (* in label)
         if (label.includes('*') && value === "") {
             valid = false;
             el.style.border = "2px solid red";
             errorMessages.push(`${label} je obvezno polje.`);
         }
 
-        // Additional validation for IBAN
         if (label.toLowerCase().includes('iban') && label.includes('*')) {
-            const numericValue = value.replace(/\D/g, ''); // only digits
+            const numericValue = value.replace(/\D/g, ''); 
             if (numericValue.length !== 15) {
                 valid = false;
                 el.style.border = "2px solid red";
@@ -29,9 +26,8 @@ function submitButton() {
             }
         }
 
-        // Additional validation for Referenca
         if (label.toLowerCase().includes('referenca') && label.includes('*')) {
-            const numericValue = value.replace(/\D/g, ''); // only digits
+            const numericValue = value.replace(/\D/g, ''); 
             if (numericValue.length !== 8) {
                 valid = false;
                 el.style.border = "2px solid red";
@@ -40,7 +36,6 @@ function submitButton() {
         }
     });
 
-    // If validation fails, show alert
     if (!valid) {
         Swal.fire({
             icon: 'error',
@@ -51,7 +46,6 @@ function submitButton() {
         return;
     }
 
-    // If everything is valid, show summary
     let summaryHTML = '<ul style="text-align:left;">';
     for (const [key, value] of Object.entries(formData)) {
         summaryHTML += `<li><strong>${key}:</strong> ${value || '-'}</li>`;
@@ -66,9 +60,9 @@ function submitButton() {
         confirmButtonColor: '#3085d6'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Future: Send data to backend here
             console.log("Zbrani podatki:", formData);
             Swal.fire('Oddano!', 'Podatki so bili uspešno poslani.', 'success');
         }
     });
 }
+
