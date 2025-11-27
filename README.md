@@ -1,39 +1,68 @@
-README
+Obrazec
+
+Obrazec je preprosta spletna stran, ki omogoča uporabnikom izpolnjevanje obrazcev z različnimi vrstami vnosnih polj. Ta projekt je zasnovan tako, da zagotavlja enostavno in hitro izkušnjo za uporabnike, ki potrebujejo spletne obrazce za različne namene.
+
 Pregled
 
-Ta repozitorij vsebuje dve glavni spletni strani:
+Na tej spletni strani lahko uporabniki izpolnijo obrazec, ki omogoča vnos različnih podatkov. Oblika spletnega obrazca vključuje več vrst vnosnih polj, kot so besedilna polja, potrditvena polja, gumbi za izbiro in podobno. Spletna stran omogoča tudi osnovno validacijo podatkov in je oblikovana tako, da je uporabniku prijazna in enostavna za uporabo.
 
-Glavna stran: „Obrazec“ (pot: /obrazec/)
+Funkcionalnosti
 
-Podstran za vnos plačila: (pot: /obrazec/obrazec.html)
+Enostaven obrazec za vnos različnih podatkov.
 
-Cilj je prikazati preprost obrazec za plačilo z večjezično podporo (SLO / EN) in različnih tipov plačil (domace, enostavno, tujina).
+Validacija vnosov za zagotovitev pravilnosti podatkov.
 
-Struktura datotek
-/obrazec/
-  index.html                ← glavna stran
-  obrazec.html              ← stran z obrazcem za plačilo
-  css/                      ← mapa za stile
-  js/                       ← mapa za skripte
-  img/                      ← mapa za slike/ikonice
+Interaktivna spletna stran, ki uporabniku omogoča takojšnjo povratno informacijo o napakah pri vnosu.
 
+Uporabniku prijazna zasnova, ki omogoča hitro in enostavno izpolnjevanje obrazca.
 
-obrazec.html — stran z obrazcem, razdeljen je na več delov: Plačnik, Prejemnik, Podrobnosti plačila. Vsebuje polja: račun, naziv, IBAN, naslov, država, znesek, datum, model, referenca, namen, …
+Tehnologije
 
-HTML5 za strukturo strani.
+Ta projekt je bil ustvarjen z uporabo naslednjih tehnologij:
 
-Prisotna tudi JavaScript za dinamično vedenje.
+HTML: Struktura in vsebina spletne strani.
 
-Opis glavnih funkcionalnosti
+CSS: Oblikovanje in postavitev spletne strani.
 
-Obrazec za novo plačilo z razdelki:
+JavaScript: Skripting za interaktivnost, validacijo obrazcev in ostale dinamične funkcionalnosti.
 
-Plačnik: izbira računa, stanje, dnevna omejitev, razpoložljivo …
+Začetek
 
-Prejemnik: naziv, IBAN, naslov, država (SLO/ITA/FRA) …
+Če želite zagnati projekt lokalno na svojem računalniku, sledite tem preprostim korakom:
 
-Podrobnosti plačila: znesek, model, referenca, koda namena, namen, datum plačila, nadomestilo, nujno/periodično plačilo, pogostost …
+1. Klonirajte repozitorij
 
-Različni tipi plačil: domače, enostavno nakazilo, tuje plačilo …
+Najprej klonirajte repozitorij na svoj računalnik z uporabo naslednjega ukaza:
 
-Licence & avtorske pravice: Urh Belingar
+git clone https://github.com/yourusername/obrazec.git
+
+2. Odprite datoteko obrazec.html
+
+Za zagon obrazca preprosto odprite datoteko obrazec.html v katerem koli brskalniku. Spletna stran bo delovala brez potrebe po lokalnem strežniku.
+
+3. Uporaba
+
+Izpolnite polja v obrazcu in preverite, če so vsi podatki pravilno vneseni. Obrazec bo samodejno opozoril na napačne vnose.
+
+Prispevajte
+
+Če želite prispevati k razvoju tega projekta, se lahko povežete z nami preko GitHub Issues ali ustvarite pull request za predlagane izboljšave.
+
+Kako prispevati
+
+Forknite repozitorij.
+
+Ustvarite svojo vejo (git checkout -b feature-name).
+
+Izvedite svoje spremembe in jih potisnite (git push origin feature-name).
+
+Pošljite pull request.
+
+Avtorji
+
+Tvoje ime – Avtor – GitHub profil
+
+Licenca
+
+Ta projekt je licenciran pod MIT License – podrobnosti so na voljo v datoteki LICENSE
+.
