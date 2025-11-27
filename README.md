@@ -45,7 +45,18 @@ Za zagon obrazca preprosto odprite datoteko `obrazec.html` v katerem koli brskal
 Izpolnite polja v obrazcu in preverite, če so vsi podatki pravilno vneseni. Obrazec bo samodejno opozoril na napačne vnose.
 
 ### 4. Origina
+Izpovnjevanje obrazca
 ![image](1.png)
+
+Prijava v obrazec
+![image](image1-origina.png)
+
+### 5. Kopije
+Kopija ipovnjevanja obrazca
+![image](image3-copy.png)
+
+Kopija prijave v obrazec
+![image](image2-copy.png)
 
 ## Avtorji
 
