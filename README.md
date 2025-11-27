@@ -52,9 +52,6 @@ Kopija ipovnjevanja obrazca
 
 Prijava v obrazec
 ![image](image1-origina.png)
-Kopija ipovnjevanja obrazca
-![image](image3-copy.png)
-
 Kopija prijave v obrazec
 ![image](image2-copy.png)
 
