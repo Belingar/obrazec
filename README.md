@@ -1,4 +1,4 @@
-# Bank@net kopija
+# <center>Bank@net kopija</center>
 
 **Bank@net** je preprosta spletna stran, ki omogoča uporabnikom izpolnjevanje obrazcev z različnimi vrstami vnosnih polj. Ta projekt je zasnovan tako, da zagotavlja enostavno in hitro izkušnjo za uporabnike, ki potrebujejo spletne obrazce za različne namene.
 
