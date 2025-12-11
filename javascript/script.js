@@ -18,7 +18,7 @@ function submitButton() {
         }
 
         if (label.toLowerCase().includes('iban') && label.includes('*')) {
-            const numericValue = value.replace(/\D/g, ''); 
+            const numericValue = value.replace(/\D/g, '');
             if (numericValue.length !== 15) {
                 valid = false;
                 el.style.border = "2px solid red";
@@ -27,7 +27,7 @@ function submitButton() {
         }
 
         if (label.toLowerCase().includes('referenca') && label.includes('*')) {
-            const numericValue = value.replace(/\D/g, ''); 
+            const numericValue = value.replace(/\D/g, '');
             if (numericValue.length !== 8) {
                 valid = false;
                 el.style.border = "2px solid red";
@@ -65,5 +65,14 @@ function submitButton() {
         }
     });
 }
+document.getElementById("numInput").addEventListener("input", function (e) {
+    let value = e.target.value.replace(/-/g, "");
+    value = value.replace(/\D/g, "");
 
+    if (value.length > 15) {
+        value = value.slice(0, 15);
+    }
+    const groups = value.match(/.{1,4}/g) || [];
 
+    e.target.value = groups.join("-");
+});
