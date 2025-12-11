@@ -37,6 +37,9 @@ Najprej klonirajte repozitorij na svoj računalnik z uporabo naslednjega ukaza:
 ```bash
 git clone https://github.com/belingar/obrazec.git
 ```
+Za testiranje uporabi:
+Uporabniško ime: Janez Novak
+Uporabniško geslo: JanezN1986
 
 ### 2. Odprite datoteko `obrazec.html`
 Za zagon obrazca preprosto odprite datoteko `obrazec.html` v katerem koli brskalniku. Spletna stran bo delovala brez potrebe po lokalnem strežniku.
